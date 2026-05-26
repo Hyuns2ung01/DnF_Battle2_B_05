@@ -21,6 +21,7 @@
     session.setAttribute("battle", battle);
     session.setAttribute("character", character);
     session.setAttribute("직업", 직업);
+    session.setAttribute("플레이어id", 플레이어id);
 %>
     <h1>캐릭터 생성 성공</h1>
     <ul>
@@ -30,8 +31,14 @@
         <li>HP: <%= character.getHP() %></li>
         <li>공격력: <%= character.get공격력() %></li>
     </ul>
-    <form action="Attack_Monster_UI.jsp" method="post">
+    <form action="Attack_Monster_UI.jsp" method="post" style="display:inline">
         <input type="submit" value="몬스터 공격">
+    </form>
+    <form action="Add_Item_UI.jsp" method="get" style="display:inline">
+        <input type="submit" value="아이템 획득">
+    </form>
+    <form action="Join_Guild_UI.jsp" method="get" style="display:inline">
+        <input type="submit" value="길드 가입">
     </form>
     <p><a href="index.jsp">새 캐릭터 생성</a></p>
 <% } else { %>
