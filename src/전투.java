@@ -23,10 +23,10 @@ public class 전투 {
     }
 
     // Use Case: 몬스터공격
-    public String 몬스터공격(캐릭터 character) {
-        // 반드시 플레이어체크
-        if (player == null || !player.플레이어체크(player.get플레이어id())) {
-            return "인증 실패";
+    public String 몬스터공격(String 플레이어id, 캐릭터 character) {
+        // 반드시 플레이어체크 (시퀀스 다이어그램: 전투->>플레이어체크(플레이어id))
+        if (player == null || !player.플레이어체크(플레이어id)) {
+            return "-1";
         }
 
         // 직업에 따라 스킬 다르게 발동

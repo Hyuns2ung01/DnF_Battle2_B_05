@@ -3,10 +3,11 @@
 <%
     전투 battle = (전투) session.getAttribute("battle");
     캐릭터 character = (캐릭터) session.getAttribute("character");
+    String 플레이어id = (String) session.getAttribute("플레이어id");
 
     String result;
     if (battle != null && character != null) {
-        result = battle.몬스터공격(character);
+        result = battle.몬스터공격(플레이어id, character);
     } else {
         result = "캐릭터가 존재하지 않습니다. 먼저 캐릭터를 생성하세요.";
     }

@@ -1,0 +1,23 @@
+# Environment & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+secrets.*
+credentials.*
+application-prod.properties
+application-prod.yml
+application-secret.yml
+# AI tools (local only)
+.bkit/
+.claude/
+.claude_history
+claude_session*
+.aider*
+.cursor/
+.copilot/
+.gemini/
