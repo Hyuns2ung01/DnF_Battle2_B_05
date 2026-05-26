@@ -31,7 +31,7 @@ sequenceDiagram
         end
         
         Ctrl -->> UI: 처리 결과 String 리턴 (스킬명, 데미지, 등급 정보 포함)
-        UI -->> Player: 공격 결과 화면 출력 (출력값 예: "[검 휘두르기!] 데미지 225 (S급)")
+        UI -->> Player: "[" + 스킬명 + "] 데미지 " + 데미지 + " (" + 등급 + ")" 출력
         
     else 플레이어id != "hero" (인증 실패)
         PClass -->> Ctrl: false
