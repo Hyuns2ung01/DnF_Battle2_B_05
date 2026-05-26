@@ -32,7 +32,7 @@ public class 전투 {
         else if (데미지 >= 100) 등급 = "A급";
         else 등급 = "B급";
 
-        return "[" + 스킬명 + "] 데미지 " + 데미지 + " (" + 등급 + ")";
+        return "[" + 스킬명 + "] 데미지 " + (int)데미지 + " (" + 등급 + ")";
     }
 
     public String 아이템획득(String 플레이어id, 캐릭터 character, String 아이템명, String 타입, int 가치) {

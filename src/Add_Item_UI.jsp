@@ -15,7 +15,8 @@
         int 가치 = Integer.parseInt(request.getParameter("가치"));
 
         if (battle != null && character != null) {
-            result = battle.아이템획득(플레이어id, character, 아이템명, 타입, 가치);
+            String raw = battle.아이템획득(플레이어id, character, 아이템명, 타입, 가치);
+            result = "인증 실패".equals(raw) ? "권한이 없습니다." : raw;
         } else {
             result = "캐릭터가 존재하지 않습니다. 먼저 캐릭터를 생성하세요.";
         }

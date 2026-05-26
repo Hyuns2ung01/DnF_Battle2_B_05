@@ -7,7 +7,8 @@
 
     String result;
     if (battle != null && character != null) {
-        result = battle.몬스터공격(플레이어id, character);
+        String raw = battle.몬스터공격(플레이어id, character);
+        result = "인증 실패".equals(raw) ? "공격 권한이 없습니다." : raw;
     } else {
         result = "캐릭터가 존재하지 않습니다. 먼저 캐릭터를 생성하세요.";
     }
