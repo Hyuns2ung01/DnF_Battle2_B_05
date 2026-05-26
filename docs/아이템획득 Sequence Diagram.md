@@ -35,7 +35,7 @@ sequenceDiagram
         alt 인벤토리 아이템리스트 크기 < 10 (여유 공간 있음)
             Inv -->> Ctrl: true (추가 성공)
             Ctrl -->> UI: "아이템 획득 성공" String 리턴
-            UI -->> Player: "아이템 획득 완료! [등급: 전설]" 출력
+            UI -->> Player: "아이템 획득 완료! [등급: " + 등급 + "]" 출력
         else 인벤토리 아이템리스트 크기 >= 10 (가득 참)
             Inv -->> Ctrl: false (추가 실패)
             Ctrl -->> UI: "인벤토리 가득 참" String 리턴
