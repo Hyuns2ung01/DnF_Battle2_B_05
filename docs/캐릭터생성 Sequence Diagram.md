@@ -32,6 +32,6 @@ sequenceDiagram
         
     else 플레이어id != "hero" (인증 실패)
         PClass -->> Ctrl: false
-        Ctrl -->> UI: "인증 실패" 리턴
+        Ctrl -->> UI: null 리턴
         UI -->> Player: "등록되지 않은 플레이어입니다." 출력
     end

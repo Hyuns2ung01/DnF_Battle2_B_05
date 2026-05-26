@@ -5,6 +5,7 @@ sequenceDiagram
     participant UI as Join_Guild_UI
     participant Ctrl as 전투
     participant PClass as 플레이어
+    participant Char as 캐릭터
     participant Guild as 길드
 
     Player ->> UI: 길드 가입 요청(플레이어id, 길드명)
@@ -14,6 +15,7 @@ sequenceDiagram
     alt 플레이어id == "hero" (인증 성공)
         PClass -->> Ctrl: true
 
+        Note over Ctrl: 외부에서 전달받은 길드 객체 참조 (Aggregation)
         Ctrl ->> Guild: 캐릭터가입(캐릭터)
 
         alt 길드 캐릭터리스트 크기 < 5 (정원 여유 있음)

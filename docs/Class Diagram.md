@@ -10,11 +10,11 @@ classDiagram
     }
     class Add_Item_UI {
         <<boundary>>
-        +아이템획득(플레이어id: String, 아이템명: String, 타입: String, 가치: int) String
+        +아이템획득(플레이어id: String, 캐릭터: 캐릭터, 아이템명: String, 타입: String, 가치: int) String
     }
     class Join_Guild_UI {
         <<boundary>>
-        +길드가입(플레이어id: String, 길드명: String) String
+        +길드가입(플레이어id: String, 캐릭터: 캐릭터, 길드: 길드) String
     }
 
     class 전투 {
@@ -43,6 +43,7 @@ classDiagram
         +get레벨() int
         +getHP() int
         +get공격력() int
+        +get인벤토리() 인벤토리
     }
 
     class 전사 {
@@ -79,6 +80,9 @@ classDiagram
     Join_Guild_UI ..> 전투 : 사용
     전투 --> 플레이어 : 모든 Use Case 플레이어id 인증 요청
     전투 --> 캐릭터 : 생성 및 명령
+    전투 ..> 길드 : 사용
+    전투 ..> 인벤토리 : 사용
+    전투 ..> 아이템 : 생성
     전사 --|> 캐릭터 : 상속
     마법사 --|> 캐릭터 : 상속
     캐릭터 "1" *-- "1" 인벤토리 : Composition

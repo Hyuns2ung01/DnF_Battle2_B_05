@@ -9,7 +9,7 @@ sequenceDiagram
     participant Inv as 인벤토리
     participant Item as 아이템
 
-    Player ->> UI: 아이템 획득 요청(플레이어id, 아이템명, 타입, 가치)
+    Player ->> UI: 아이템 획득 요청(플레이어id, 캐릭터, 아이템명, 타입, 가치)
     UI ->> Ctrl: 아이템획득(플레이어id, 캐릭터, 아이템명, 타입, 가치)
     Ctrl ->> PClass: 플레이어체크(플레이어id)
 
